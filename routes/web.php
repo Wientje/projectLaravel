@@ -1,5 +1,5 @@
 <?php
-
+namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,3 +16,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/contact', [ContactController::class, 'show'])->name('contact');
+Route::get('about', [AboutController::class, 'show'])->name('about');
+Route::get('cars', [CarsController::class, 'index'])->name('cars.index');
+Route::get('cars/{id}', [CarsController::class, 'show'])->name('cars.show');
+Route::get('cars/create', [CarsController::class, 'create'])->name('cars.create');
+
