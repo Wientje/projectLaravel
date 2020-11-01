@@ -38,7 +38,7 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function caritems()
+    public function carItems()
     {
         return $this->hasMany(CarItem::class);
     }

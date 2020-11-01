@@ -25,8 +25,10 @@ Route::get('cars/create/', [CarsController::class, 'create'])->name('cars.create
 Route::post('cars/store', [CarsController::class, 'store'])->name('cars.store');
 Route::get('cars/{id}', [CarsController::class, 'show'])->name('cars.show');
 
+Route::get('admin', [AdminController::class, 'index'])->name('admin.index');
 
-
+Route::get('carsMain/create', [CarsMainController::class, 'create'])->name('carsMain.create');
+Route::post('carsMain/store', [CarsMainController::class, 'store'])->name('carsMain.store');
 
 Auth::routes();
 

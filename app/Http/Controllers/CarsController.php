@@ -2,8 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\CarMainItem;
+use App\Models\User;
 use App\Models\CarItem;
+use Illuminate\Support\Facades\Gate;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Symfony\Component\Console\Input\Input;
 
 class CarsController extends Controller
 {
@@ -12,12 +17,13 @@ class CarsController extends Controller
      *
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Http\Response|\Illuminate\View\View
      */
-    public function index()
+    public function index(CarItem $carItems, Request $request)
     {
-        $carItems = CarItem::orderBy('created_at', 'desc')->get();
+        $carItems = CarItem::orderBy('created_at', 'desc')->where('title', 'LIKE', '%' . $request->post('title') . '%')->get();
         return view('Cars/index', [
             'carItems' => $carItems
         ]);
+
     }
 
     /**
@@ -46,6 +52,7 @@ class CarsController extends Controller
         $carItems = new CarItem();
         $carItems->title = $request->get('title');
         $carItems->image = $request->get('image');
+        $carItems->user_id = Auth::user()->id;
 
         $carItems->save();
         return redirect('cars')->with('success', 'Car has been added successfully');
@@ -59,16 +66,23 @@ class CarsController extends Controller
      */
     public function show($id)
     {
-
         $carItems = CarItem::find($id);
-        if($carItems === null){
+        $carMainItems = CarMainItem::all();
+        if (Gate::allows('view-car',$carItems)) {
+           // if($user = 'isUser') {
+
+                if ($carItems === null) {
+                    abort(404, 'Car not found');
+                }
+
+                return view('Cars/show', [
+                    'carItems' => $carItems,
+                    'carMainItems' => $carMainItems,
+                ]);
+           // }
+        }else{
             abort(404, 'Car not found');
         }
-
-
-        return view('Cars/show', [
-            'carItems' => $carItems,
-        ]);
     }
 
     /**

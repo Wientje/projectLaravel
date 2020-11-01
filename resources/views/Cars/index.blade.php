@@ -8,19 +8,22 @@
                     <h2>Your cars</h2>
                     <span class="byline">Did you had any maintenance?</span> </div>
 
+
                 @if ($message = Session::get('success'))
                     <div class="alert alert-success alert-block">
                         <strong>{{ $message }}</strong>
                     </div>
                 @endif
-
-                @foreach($carItems as $carItems)
-                    <div class="row">
-                        <h2 class="card-title">{{$carItems['title']}}</h2>
-                        <img class="card-img" src="{{$carItems['image']}}">
-                        <a href="{{route('cars.show', $carItems['id'])}}">Watch maintenance of {{$carItems['title']}}</a>
-                    </div>
-                @endforeach
+                @can('isUser')
+                    @foreach($carItems as $carItem)
+                        <div class="row">
+                            <h2 class="card-title">{{$carItem['title']}}</h2>
+{{--                            <h3 class="card-title">{{$carItems ?? ''->user->name}}</h3>--}}
+                            <img class="card-img" src="{{$carItem['image']}}">
+                            <a href="{{route('cars.show', $carItem['id'])}}">Watch maintenance of {{$carItem['title']}}</a>
+                        </div>
+                    @endforeach
+                @endcan
                     <div>
                         <h3><a href="{{route('cars.create')}}">Add a car to your collection</a></h3>
                     </div>

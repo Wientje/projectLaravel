@@ -15,7 +15,7 @@ class CreateCarItemsTable extends Migration
     {
         Schema::create('car_items', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('user_id');
+            $table->unsignedBigInteger('user_id');
             $table->string('title');
             $table->string('image');
             $table->timestamps();
