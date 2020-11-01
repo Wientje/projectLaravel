@@ -8,6 +8,12 @@
                     <h2>Your cars</h2>
                     <span class="byline">Did you had any maintenance?</span> </div>
 
+                @if ($message = Session::get('success'))
+                    <div class="alert alert-success alert-block">
+                        <strong>{{ $message }}</strong>
+                    </div>
+                @endif
+
                 @foreach($carItems as $carItems)
                     <div class="row">
                         <h2 class="card-title">{{$carItems['title']}}</h2>
@@ -15,6 +21,9 @@
                         <a href="{{route('cars.show', $carItems['id'])}}">Watch maintenance of {{$carItems['title']}}</a>
                     </div>
                 @endforeach
+                    <div>
+                        <h3><a href="{{route('cars.create')}}">Add a car to your collection</a></h3>
+                    </div>
             </div>
             <div id="sidebar">
                 <ul class="style1">

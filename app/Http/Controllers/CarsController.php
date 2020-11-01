@@ -10,11 +10,11 @@ class CarsController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Http\Response|\Illuminate\View\View
      */
     public function index()
     {
-        $carItems = CarItem::all();
+        $carItems = CarItem::orderBy('created_at', 'desc')->get();
         return view('Cars/index', [
             'carItems' => $carItems
         ]);
@@ -23,7 +23,7 @@ class CarsController extends Controller
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Http\Response|\Illuminate\View\View
      */
     public function create()
     {
@@ -34,33 +34,40 @@ class CarsController extends Controller
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Http\RedirectResponse|\Illuminate\Http\Response|\Illuminate\Routing\Redirector
      */
     public function store(Request $request)
     {
-        //
+        request()->validate([
+           'title' => 'required',
+           'image' => 'required'
+        ]);
+
+        $carItems = new CarItem();
+        $carItems->title = $request->get('title');
+        $carItems->image = $request->get('image');
+
+        $carItems->save();
+        return redirect('cars')->with('success', 'Car has been added successfully');
     }
 
     /**
      * Display the specified resource.
      *
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Http\Response|\Illuminate\View\View
      */
     public function show($id)
     {
-        try{
-            $carItems = CarItem::find($id);
-            $error = null;
-        }catch(\Exception $e){
-            $carItems = null;
-            $error = $e->getMessage();
+
+        $carItems = CarItem::find($id);
+        if($carItems === null){
+            abort(404, 'Car not found');
         }
 
 
         return view('Cars/show', [
             'carItems' => $carItems,
-            'error' => $error
         ]);
     }
 

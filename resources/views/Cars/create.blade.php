@@ -7,13 +7,23 @@
                 <div class="title">
                     <h2>Add a car</h2>
                     <span class="byline">to your collection</span> </div>
-                    <form method="post" action="">
+                    <form method="post" action="{{ route('cars.store' )}}">
                         @csrf
                         <div class="form-group">
                             <label for="title">Titel</label>
-                            <input type="text" class="form-control" id="title" name="title">
-
+                            <input type="text" class="form-control" id="title" name="title" required>
+                            @if($errors->has('title'))
+                                <span>{{ $errors->first('title') }}</span>
+                            @endif
                         </div>
+                        <div class="form-group">
+                            <label for="image">Afbeelding</label>
+                            <input type="text" class="form-control" id="image" name="image" required>
+                            @if($errors->has('image'))
+                                <span>{{ $errors->first('image') }}</span>
+                            @endif
+                        </div>
+                        <button type="submit">Toevoegen</button>
                     </form>
             </div>
             <div id="sidebar">
