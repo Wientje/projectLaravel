@@ -15,9 +15,4 @@ class CarItem extends Model
     {
         return $this->belongsTo(User::class);
     }
-
-    public function carItems()
-    {
-        return $this->hasMany(CarMainItem::class);
-    }
 }

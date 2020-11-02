@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\CarMainItem;
 use App\Models\User;
 use App\Models\CarItem;
 use Illuminate\Support\Facades\Gate;
@@ -19,12 +18,13 @@ class CarsController extends Controller
      */
     public function index(CarItem $carItems, Request $request)
     {
-        $carItems = CarItem::orderBy('created_at', 'desc')->where('title', 'LIKE', '%' . $request->post('title') . '%')->get();
-        return view('Cars/index', [
-            'carItems' => $carItems
-        ]);
+                $carItems = CarItem::orderBy('created_at', 'desc')->where('title', 'LIKE', '%' . $request->post('title') . '%')->get();
 
+                return view('Cars/index', [
+                    'carItems' => $carItems,
+                ]);
     }
+
 
     /**
      * Show the form for creating a new resource.
@@ -67,7 +67,6 @@ class CarsController extends Controller
     public function show($id)
     {
         $carItems = CarItem::find($id);
-        $carMainItems = CarMainItem::all();
         if (Gate::allows('view-car',$carItems)) {
            // if($user = 'isUser') {
 
@@ -77,7 +76,6 @@ class CarsController extends Controller
 
                 return view('Cars/show', [
                     'carItems' => $carItems,
-                    'carMainItems' => $carMainItems,
                 ]);
            // }
         }else{

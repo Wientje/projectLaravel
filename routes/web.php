@@ -27,9 +27,6 @@ Route::get('cars/{id}', [CarsController::class, 'show'])->name('cars.show');
 
 Route::get('admin', [AdminController::class, 'index'])->name('admin.index');
 
-Route::get('carsMain/create', [CarsMainController::class, 'create'])->name('carsMain.create');
-Route::post('carsMain/store', [CarsMainController::class, 'store'])->name('carsMain.store');
-
 Auth::routes();
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');

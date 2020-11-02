@@ -12,14 +12,6 @@
                     <div>
                         <input data-id="{{$carItems->id}}" class="toggle-class" type="checkbox" data-onstyle="success" data-offstyle="danger" data-toggle="toggle" data-on="Active" data-off="InActive" {{ $carItems->status ? 'checked' : '' }}>
                     </div>
-
-                    @foreach($carMainItems as $carMainItem)
-                        <div class="row">
-                            <h4 class="card-title">{{$carMainItem['title']}}</h4>
-                            <p class="card-title">{{$carMainItem['description']}}</p>
-                            <h4 class="card-title">{{$carMainItem['odometer']}}</h4>
-                        </div>
-                    @endforeach
                 @else
                     <h2>{{$error}}</h2>
                 @endif
