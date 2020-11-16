@@ -24,10 +24,8 @@
   <component name="ChangeListManager">
     <list default="true" id="3ef4809c-acf5-4259-9222-4b9b29c7ee56" name="Default Changelist" comment="Deleted CarMainItem -model -views - controller -routes to get CarItem working again">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AdminController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AdminController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Admin/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Admin/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layout.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layout.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CarsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CarsController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Cars/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Cars/index.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -207,6 +205,7 @@
       <workItem from="1604156270882" duration="527000" />
       <workItem from="1604156825115" duration="45815000" />
       <workItem from="1604314490062" duration="7877000" />
+      <workItem from="1605525752091" duration="1505000" />
     </task>
     <task id="LOCAL-00001" summary="Created About MVC&#10;Created Contact MVC&#10;Created Cars.index MVC&#10;Created Cars.show MVC&#10;Created Cars.create (not working)">
       <created>1604097273966</created>

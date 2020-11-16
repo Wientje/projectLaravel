@@ -18,10 +18,12 @@ class CarsController extends Controller
      */
     public function index(CarItem $carItems, Request $request)
     {
-                $carItems = CarItem::orderBy('created_at', 'desc')->where('title', 'LIKE', '%' . $request->post('title') . '%')->get();
+                //$carItems = CarItem::orderBy('created_at', 'desc')->where('title', 'LIKE', '%' . $request->post('title') . '%')->get();
+
+                $carItems = CarItem::all();
 
                 return view('Cars/index', [
-                    'carItems' => $carItems,
+                    'carItems' => $carItems
                 ]);
     }
 

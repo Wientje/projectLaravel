@@ -14,7 +14,7 @@
                         <strong>{{ $message }}</strong>
                     </div>
                 @endif
-                @can('isUser')
+{{--                @can('isUser' || 'isAdmin')--}}
                     @foreach($carItems as $carItem)
                         <div class="row">
                             <h2 class="card-title">{{$carItem['title']}}</h2>
@@ -23,7 +23,7 @@
                             <a href="{{route('cars.show', $carItem['id'])}}">Watch maintenance of {{$carItem['title']}}</a>
                         </div>
                     @endforeach
-                @endcan
+{{--                @endcan--}}
                     <div>
                         <h3><a href="{{route('cars.create')}}">Add a car to your collection</a></h3>
                     </div>
