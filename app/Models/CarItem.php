@@ -15,4 +15,9 @@ class CarItem extends Model
     {
         return $this->belongsTo(User::class);
     }
+
+    public function maintenanceItems()
+    {
+        return $this->hasMany(MaintenanceItem::class);
+    }
 }
