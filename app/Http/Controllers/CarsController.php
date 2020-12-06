@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use App\Models\CarItem;
+use App\Models\MaintenanceItem;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -69,6 +70,8 @@ class CarsController extends Controller
     public function show($id)
     {
         $carItems = CarItem::find($id);
+        $maintenanceItems = MaintenanceItem::all()->CarItem::find($id); //Aan Antwan vragen hoe ik de MainItems van 1 CarItem id kan opvragen
+
         if (Gate::allows('view-car',$carItems)) {
            // if($user = 'isUser') {
 
@@ -78,6 +81,7 @@ class CarsController extends Controller
 
                 return view('Cars/show', [
                     'carItems' => $carItems,
+                    'maintenanceItems' => $maintenanceItems,
                 ]);
            // }
         }else{
