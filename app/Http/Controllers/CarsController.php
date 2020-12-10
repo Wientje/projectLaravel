@@ -19,13 +19,30 @@ class CarsController extends Controller
      */
     public function index(CarItem $carItems, Request $request)
     {
-                //$carItems = CarItem::orderBy('created_at', 'desc')->where('title', 'LIKE', '%' . $request->post('title') . '%')->get();
 
-                $carItems = CarItem::all();
+
+                //$carItems = CarItem::all();
+                $carItems = CarItem::orderBy('created_at', 'desc')
+                    ->where('title', 'LIKE', '%' . $request->post('term') . '%')
+                    ->get();
 
                 return view('Cars/index', [
                     'carItems' => $carItems
                 ]);
+
+
+
+//                $carItems = CarItem::where([
+//                    [function ($query) use ($request) {
+//                        if (($term = $request->term)) {
+//                            $query->orWhere('title', 'LIKE', '%' . $term . '%')->get();
+//                        }
+//                    }]
+//                ])
+//                ->orderBy("id", "desc");
+//
+//                    return view('Cars.index', compact('carItems'))
+//                        ->with('i', (request()->input('page', 1) -1) * 5);
     }
 
 
@@ -70,7 +87,7 @@ class CarsController extends Controller
     public function show($id)
     {
         $carItems = CarItem::find($id);
-        $maintenanceItems = MaintenanceItem::all()->CarItem::find($id); //Aan Antwan vragen hoe ik de MainItems van 1 CarItem id kan opvragen
+        $maintenanceItems = MaintenanceItem::where("car_items_id", "=", $id)->get(); //Aan Antwan vragen hoe ik de MainItems van 1 CarItem id kan opvragen
 
         if (Gate::allows('view-car',$carItems)) {
            // if($user = 'isUser') {
@@ -121,5 +138,15 @@ class CarsController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function ChangeStatus(Request $request)
+    {
+        //\Log::info($request->all());
+        $user = User::find($request->user_id);
+        $user->status = $request->status;
+        $user->save();
+
+        return response()->json(['success'=>'Status change successfully.']);
     }
 }

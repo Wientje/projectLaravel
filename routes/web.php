@@ -28,6 +28,8 @@ Route::get('cars/{id}', [CarsController::class, 'show'])->name('cars.show')->mid
 
 Route::post('maintenance/store', [MaintenanceController::class, 'store'])->name('maintenance.store')->middleware('auth');
 
+Route::get('ChangeStatus', [CarsController::class, 'ChangeStatus']);
+
 Route::get('admin', [AdminController::class, 'index'])->name('admin.index')->middleware('auth');;
 
 Auth::routes();
