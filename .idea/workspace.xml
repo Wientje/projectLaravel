@@ -22,16 +22,10 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3ef4809c-acf5-4259-9222-4b9b29c7ee56" name="Default Changelist" comment="Fixed search form on Cars index&#10;&#10;Fixed Active/Inactive toggle on Cars index &amp; show with Ajax">
+    <list default="true" id="3ef4809c-acf5-4259-9222-4b9b29c7ee56" name="Default Changelist" comment="13-12-2020">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AdminController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AdminController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CarsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CarsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Admin/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Admin/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Cars/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Cars/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Cars/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Cars/show.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layout.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layout.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/CarItem.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/CarItem.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -219,6 +213,7 @@
       <workItem from="1607603434636" duration="8010000" />
       <workItem from="1607709676086" duration="8992000" />
       <workItem from="1607813337816" duration="604000" />
+      <workItem from="1607880399108" duration="2613000" />
     </task>
     <task id="LOCAL-00001" summary="Created About MVC&#10;Created Contact MVC&#10;Created Cars.index MVC&#10;Created Cars.show MVC&#10;Created Cars.create (not working)">
       <created>1604097273966</created>
@@ -297,7 +292,14 @@
       <option name="project" value="LOCAL" />
       <updated>1607637708529</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="13-12-2020">
+      <created>1607880620607</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1607880620607</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -325,7 +327,8 @@
     <MESSAGE value="Made Maintenance Items Model &amp; Migration" />
     <MESSAGE value="Maintenance Items are showing on Show page&#10;&#10;Ask Antwan about how to show MainItems of caritem id &amp; how to store new MainItem to a caritem id" />
     <MESSAGE value="Fixed search form on Cars index&#10;&#10;Fixed Active/Inactive toggle on Cars index &amp; show with Ajax" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed search form on Cars index&#10;&#10;Fixed Active/Inactive toggle on Cars index &amp; show with Ajax" />
+    <MESSAGE value="13-12-2020" />
+    <option name="LAST_COMMIT_MESSAGE" value="13-12-2020" />
   </component>
   <component name="WindowStateProjectService">
     <state x="526" y="236" key="#Notifications" timestamp="1604155187834">
@@ -360,19 +363,19 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="277" y="57" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1604237669801" />
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1607637726272">
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1607880625026">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1605534275657" />
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1607637726272" />
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1607880625026" />
     <state x="425" y="187" key="run.anything.popup" timestamp="1604248006937">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="425" y="187" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1604248006937" />
-    <state x="-1381" y="183" width="840" height="856" key="search.everywhere.popup" timestamp="1607716860889">
-      <screen x="-1920" y="0" width="1920" height="1040" />
+    <state x="430" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1607881935402">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="-1381" y="183" width="840" height="856" key="search.everywhere.popup/0.0.1536.824/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1607716860889" />
-    <state x="430" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1607713263991" />
+    <state x="430" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1607881935402" />
   </component>
 </project>

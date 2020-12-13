@@ -23,6 +23,7 @@ class CarsController extends Controller
 
                 //$carItems = CarItem::all();
                 $carItems = CarItem::orderBy('created_at', 'desc')
+                    ->where('user_id', auth()->user()->id)
                     ->where('title', 'LIKE', '%' . $request->post('term') . '%')
                     ->get();
 

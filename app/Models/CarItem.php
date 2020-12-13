@@ -20,4 +20,9 @@ class CarItem extends Model
     {
         return $this->hasMany(MaintenanceItem::class);
     }
+
+    public function category()
+    {
+        return $this->hasOne(Category::class);
+    }
 }
