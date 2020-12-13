@@ -42,7 +42,7 @@ Route::get('cars/{id}', [CarsController::class, 'show'])->name('cars.show')->mid
 
 Route::post('maintenance/store', [MaintenanceController::class, 'store'])->name('maintenance.store')->middleware('auth');
 
-Route::get('changeStatus', [AdminController::class, 'changeStatus'])->name('admin.changeStatus');
+Route::post('changeStatus', [CarsController::class, 'changeStatus'])->name('cars.changeStatus');
 
 Route::get('admin', [AdminController::class, 'index'])->name('admin.index')->middleware('auth');
 

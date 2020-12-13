@@ -149,4 +149,12 @@ class CarsController extends Controller
         //
     }
 
+    public function changeStatus(Request $request)
+    {
+        $carItem = CarItem::find($request->car_item_id);
+        $carItem->status = $request->status;
+        $carItem->save();
+
+        return response()->json(['success'=>'Status change successfully.']);
+    }
 }

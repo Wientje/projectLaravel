@@ -22,9 +22,11 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3ef4809c-acf5-4259-9222-4b9b29c7ee56" name="Default Changelist" comment="Fixed redirect MaintenanceItems.store">
+    <list default="true" id="3ef4809c-acf5-4259-9222-4b9b29c7ee56" name="Default Changelist" comment="Fixed category display">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CarsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CarsController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Cars/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Cars/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -212,7 +214,7 @@
       <workItem from="1607603434636" duration="8010000" />
       <workItem from="1607709676086" duration="8992000" />
       <workItem from="1607813337816" duration="604000" />
-      <workItem from="1607880399108" duration="7695000" />
+      <workItem from="1607880399108" duration="10036000" />
     </task>
     <task id="LOCAL-00001" summary="Created About MVC&#10;Created Contact MVC&#10;Created Cars.index MVC&#10;Created Cars.show MVC&#10;Created Cars.create (not working)">
       <created>1604097273966</created>
@@ -326,7 +328,14 @@
       <option name="project" value="LOCAL" />
       <updated>1607887729010</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Fixed category display">
+      <created>1607888177290</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1607888177290</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -358,7 +367,8 @@
     <MESSAGE value="Categories Model &amp; Migration" />
     <MESSAGE value="Fixed MaintenanceItems.store" />
     <MESSAGE value="Fixed redirect MaintenanceItems.store" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed redirect MaintenanceItems.store" />
+    <MESSAGE value="Fixed category display" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed category display" />
   </component>
   <component name="WindowStateProjectService">
     <state x="526" y="236" key="#Notifications" timestamp="1604155187834">
@@ -393,19 +403,19 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="277" y="57" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1604237669801" />
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1607887733739">
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1607888180682">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1605534275657" />
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1607887733739" />
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1607888180682" />
     <state x="425" y="187" key="run.anything.popup" timestamp="1604248006937">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="425" y="187" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1604248006937" />
-    <state x="430" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1607887939800">
+    <state x="430" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1607890776484">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="-1381" y="183" width="840" height="856" key="search.everywhere.popup/0.0.1536.824/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1607716860889" />
-    <state x="430" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1607887939800" />
+    <state x="430" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1607890776484" />
   </component>
 </project>
