@@ -21,12 +21,12 @@ class CarsController extends Controller
     public function index(CarItem $carItems, Request $request)
     {
 
-                $category = $request->post('category');
+                $category = $request->get('category');
 
                 //$carItems = CarItem::all();
                 $carItems = CarItem::orderBy('created_at', 'desc')
                     ->where('user_id', auth()->user()->id)
-                    ->where('title', 'LIKE', '%' . $request->post('term') . '%')
+                    ->where('title', 'LIKE', '%' . $request->get('term') . '%')
                     ->when($category, function($query) use ($category) {
                         return $query->where('category_id', '=', $category);
                     })
