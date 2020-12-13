@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use App\Models\User;
 use App\Models\CarItem;
 use App\Models\MaintenanceItem;
@@ -20,15 +21,22 @@ class CarsController extends Controller
     public function index(CarItem $carItems, Request $request)
     {
 
+                $category = $request->post('category');
 
                 //$carItems = CarItem::all();
                 $carItems = CarItem::orderBy('created_at', 'desc')
                     ->where('user_id', auth()->user()->id)
                     ->where('title', 'LIKE', '%' . $request->post('term') . '%')
+                    ->when($category, function($query) use ($category) {
+                        return $query->where('category_id', '=', $category);
+                    })
                     ->get();
 
+                $categories = Category::all();
+
                 return view('Cars/index', [
-                    'carItems' => $carItems
+                    'carItems' => $carItems,
+                    'categories' => $categories
                 ]);
 
 

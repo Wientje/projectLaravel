@@ -18,14 +18,22 @@
                 <form action="{{ route('cars.index') }}" method="GET" role="search">
 
                     <div class="input-group">
-                        <input type="text" class="form-control mr-2" name="term" placeholder="Search cars" id="term">
-                        <a href="{{ route('cars.index') }}" class=" mt-1">
+                        <input type="text" class="form-control mr-2" name="term" value="{{request()->get('term')}}" placeholder="Search cars" id="term">
+
+                        <label for="cars">Filter op merk:</label>
+
+                        <select name="category">
+                            <option value="">No category</option>
+                            @foreach($categories as $category)
+                            <option {{ request()->get('category') == $category->id ? 'selected' : '' }} value="{{ $category->id }}">{{ $category->title }}</option>
+                            @endforeach
+                        </select>
+
                             <span class="input-group-btn">
-                                <button class="btn btn-danger" type="button" title="Refresh page">
+                                <button class="btn btn-danger" type="submit" title="Refresh page">
                                     <span class="fas fa-sync-alt">Search</span>
                                 </button>
                             </span>
-                        </a>
                     </div>
                 </form>
 
