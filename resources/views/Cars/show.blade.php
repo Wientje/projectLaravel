@@ -51,11 +51,6 @@
                         </div>
                         <button type="submit">Toevoegen</button>
                     </form>
-
-
-                    <div>
-                        <input data-id="{{$carItems->id}}" class="toggle-class" type="checkbox" data-onstyle="success" data-offstyle="danger" data-toggle="toggle" data-on="Active" data-off="InActive" {{ $carItems->status ? 'checked' : '' }}>
-                    </div>
                 @else
                     <h2>{{$error}}</h2>
                 @endif

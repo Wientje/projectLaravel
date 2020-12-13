@@ -23,6 +23,14 @@
                                 <span>{{ $errors->first('image') }}</span>
                             @endif
                         </div>
+
+                        <div>
+                            <select name="category_id">
+                                @foreach($categories as $category)
+                                    <option value="{{ $category->id }}">{{ $category->title }}</option>
+                                @endforeach
+                            </select>
+                        </div>
                         <button type="submit">Toevoegen</button>
                     </form>
             </div>

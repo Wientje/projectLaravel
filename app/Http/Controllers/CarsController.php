@@ -62,7 +62,11 @@ class CarsController extends Controller
      */
     public function create()
     {
-        return view('Cars/create');
+        $categories = Category::all();
+
+        return view('Cars/create', [
+            'categories' => $categories
+        ]);
     }
 
     /**
@@ -79,8 +83,10 @@ class CarsController extends Controller
         ]);
 
         $carItems = new CarItem();
+        $carItems->status = 1;
         $carItems->title = $request->get('title');
         $carItems->image = $request->get('image');
+        $carItems->category_id = $request->get('category_id');
         $carItems->user_id = Auth::user()->id;
 
         $carItems->save();
