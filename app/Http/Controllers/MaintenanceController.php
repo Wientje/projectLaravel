@@ -47,7 +47,7 @@ class MaintenanceController extends Controller
         $maintenanceItem->car_items_id = $request->get('id'); // Aan Antwan vragen hoe ik de ID van de show CarItem kan opvragen -> Antwoord: gebruik hidden input in form aan de front-ends
 
         $maintenanceItem->save();
-        //return redirect('cars/$id')->with('success', 'Car has been added successfully');
+        return redirect('cars/'. $request->get('id'))->with('success', 'Car has been added successfully');
     }
 
     /**
