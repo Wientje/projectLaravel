@@ -36,7 +36,6 @@
 {{--                            <h3 class="card-title">{{$carItems ?? ''->user->name}}</h3>--}}
                             <img class="card-img" src="{{$carItem['image']}}">
                             <a href="{{route('cars.show', $carItem['id'])}}">Watch maintenance of {{$carItem['title']}}</a>
-                            <input data-id="{{$carItem->id}}" class="toggle-class" type="checkbox" data-onstyle="success" data-offstyle="danger" data-toggle="toggle" data-on="Active" data-off="InActive" {{ $carItem->status ? 'checked' : '' }}>
 
                         </div>
                     @endforeach
@@ -63,24 +62,5 @@
 {{--            </div>--}}
         </div>
     </div>
-
-    <script>
-        $(function() {
-            $('.toggle-class').change(function() {
-                var status = $(this).prop('checked') == true ? 1 : 0;
-                var user_id = $(this).data('id');
-                console.log(status);
-                $.ajax({
-                    type: "GET",
-                    dataType: "json",
-                    url: '/ChangeStatus',
-                    data: {'status': status, 'user_id': user_id},
-                    success: function(data){
-                        console.log(data.success)
-                    }
-                });
-            })
-        })
-    </script>
 
 @endsection

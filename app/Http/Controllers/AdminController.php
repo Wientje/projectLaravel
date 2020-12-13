@@ -11,6 +11,8 @@ class AdminController extends Controller
     {
 //        $user = User::all()->first;
 //        if($user->role === 'admin'){
+
+
         if(1 === 1){
             $user = User::all();
             return view('Admin.index', [
@@ -19,5 +21,15 @@ class AdminController extends Controller
         }else{
             abort(403, 'Unauthorized');
         }
+
+    }
+
+    public function changeStatus(Request $request)
+    {
+        $user = User::find($request->users_id);
+        $user->status = $request->status;
+        $user->save();
+
+        return response()->json(['success'=>'Status change successfully.']);
     }
 }

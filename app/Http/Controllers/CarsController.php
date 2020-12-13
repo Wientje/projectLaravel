@@ -140,13 +140,4 @@ class CarsController extends Controller
         //
     }
 
-    public function ChangeStatus(Request $request)
-    {
-        //\Log::info($request->all());
-        $user = User::find($request->user_id);
-        $user->status = $request->status;
-        $user->save();
-
-        return response()->json(['success'=>'Status change successfully.']);
-    }
 }
