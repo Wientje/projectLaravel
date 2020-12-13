@@ -38,15 +38,13 @@ class MaintenanceController extends Controller
     {
         request()->validate([
             'title' => 'required',
-            'image' => 'required'
         ]);
 
         $maintenanceItem = new MaintenanceItem();
         $maintenanceItem->title = $request->get('title');
         $maintenanceItem->description = $request->get('description');
-        $maintenanceItem->odometer = $request->get('mileage');
-        $maintenanceItem->caritem_id = CarItem::find($id); // Aan Antwan vragen hoe ik de ID van de show CarItem kan opvragen -> Antwoord: gebruik hidden input in form aan de front-ends
-        //$maintenanceItem->caritem_id = Auth::user()->id;
+        $maintenanceItem->mileage = $request->get('mileage');
+        $maintenanceItem->car_items_id = $request->get('id'); // Aan Antwan vragen hoe ik de ID van de show CarItem kan opvragen -> Antwoord: gebruik hidden input in form aan de front-ends
 
         $maintenanceItem->save();
         //return redirect('cars/$id')->with('success', 'Car has been added successfully');

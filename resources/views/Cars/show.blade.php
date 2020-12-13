@@ -27,6 +27,7 @@
 
                     <form method="post" action="{{ route('maintenance.store' )}}">
                         @csrf
+                        <input type="hidden" name="id" value="{{ $carItems['id'] }}">
                         <div class="form-group">
                             <label for="title">Title</label>
                             <input type="text" class="form-control" id="title" name="title" required>
